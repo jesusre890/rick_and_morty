@@ -1,11 +1,16 @@
-import Card from './Card';
+import Card from '../card/Card';
+// import styles from './Cards.module.css'
 
 
 export default function Cards({characters}) {
-
+   const cardsContainer = {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-evenly'
+   }
 
    return (
-      <div> 
+      <div style={cardsContainer}> 
          {
             characters.map((i) => 
                <Card
