@@ -12,10 +12,10 @@ export default function Cards({characters, onClose}) {
    return (
       <div style={cardsContainer}> 
          {
-            characters.map((i) => 
+            characters.map(i => 
                <Card
                key= {i.id}
-               id={characters.id}
+               id={i.id}
                name={i.name}
                status={i.status}
                specie={i.species}
