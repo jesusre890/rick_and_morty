@@ -2,7 +2,7 @@ import Card from '../card/Card';
 // import styles from './Cards.module.css'
 
 
-export default function Cards({characters}) {
+export default function Cards({characters, onClose}) {
    const cardsContainer = {
       display: 'flex',
       flexWrap: 'wrap',
@@ -15,13 +15,14 @@ export default function Cards({characters}) {
             characters.map((i) => 
                <Card
                key= {i.id}
+               id={characters.id}
                name={i.name}
                status={i.status}
                specie={i.species}
                gender={i.gender}
                origin={i.origin.name}
                image={i.image}
-               onClose={() => window.alert('Emulamos que se cierra la card')}
+               onClose={onClose}
                />
             )
          }
