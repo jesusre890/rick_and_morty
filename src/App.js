@@ -30,6 +30,10 @@ function App() {
 
   const onSearch = id => {
     // copiado ejercicio 7
+    //Evitar duplicados:
+    const characterId = characters.filter( character => character.id === Number( id ) );
+    //console.log(characterId);
+    if(characterId.length) return alert('Ese ID ya se esta mostrando, por favor busca otro')
     axios(`https://rickandmortyapi.com/api/character/${id}`).then(
       ({ data }) => {
         if (data.name) {
