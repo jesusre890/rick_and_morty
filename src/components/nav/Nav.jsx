@@ -9,6 +9,9 @@ export default function Nav(props) {
             <NavLink to="/home">
                 <button> Home </button>
             </NavLink>
+            <NavLink to="/favorites">
+                <button> Favoritos </button>
+            </NavLink>
             <NavLink to="/about">
                 <button> About </button>
             </NavLink>

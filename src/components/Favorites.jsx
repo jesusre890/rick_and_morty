@@ -1,19 +1,17 @@
-import Card from '../card/Card';
+import { connect } from 'react-redux';
+import Card from './card/Card';
+import styles from './Favorites.module.css'
+
 // import styles from './Cards.module.css'
+//LO TRAIGO IGUAL QUE EN CARDS
 
 
-export default function Cards({characters, onClose}) {
-   const cardsContainer = {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'space-evenly'
-   }
+function Favorites({myFavorites, onClose}) {
 
-   
    return (
-      <div style={cardsContainer}> 
+      <div className={styles.container}> 
          {
-            characters.map(i => 
+            myFavorites.map(i => 
                <Card
                key= {i.id}
                id={i.id}
@@ -30,3 +28,11 @@ export default function Cards({characters, onClose}) {
       </div>
    );
 }
+
+const mapStateToProps = ( state ) => {
+    return {
+        myFavorites: state.myFavorites
+    }
+};
+
+export default connect(mapStateToProps, null)(Favorites)
