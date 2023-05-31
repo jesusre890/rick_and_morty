@@ -1,0 +1,32 @@
+.container {
+    color:rgb(250, 250, 250);
+    background-color: rgb(49, 48, 48);
+    border-radius:10px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin: 50px;
+}
+
+.container input {
+    border-radius: 5px;
+    height: 25px;
+    margin: auto;
+    display: block;
+}
+
+.container button {
+    border-radius: 5px;
+    height: 25px;
+    color: whitesmoke;
+    background-color: darkolivegreen;
+    box-shadow: 0 5 5px black;
+    &:hover {
+        box-shadow: 0 0 5px grey;
+        color: darkolivegreen;
+        background-color: white;
+    }
+}
+
+.errors {
+    color: red;
+}

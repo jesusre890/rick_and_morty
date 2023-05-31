@@ -1,0 +1,24 @@
+.container {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    margin: auto;
+}
+
+.container input {
+    border-radius: 5px;
+    height: 25px;
+    margin-right: 2px;
+}
+
+.container button {
+    border-radius: 5px;
+    height: 25px;
+    color: whitesmoke;
+    background-color: darkolivegreen;
+    box-shadow: 0 5 5px black;
+    &:hover {
+        box-shadow: 0 0 5px grey;
+        color: darkolivegreen;
+        background-color: white;
+    }
+}
