@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 
 import { createRoot } from "react-dom/client";
-import './index.css'
-import App from './App'
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './components/redux/store';
+import "./index.css";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./components/redux/store";
 
 const rootElement = document.getElementById("root");
-const root = createRoot(rootElement)
+const root = createRoot(rootElement);
 
 root.render(
   <Provider store={store}>
@@ -16,5 +16,4 @@ root.render(
       <App />
     </BrowserRouter>
   </Provider>
-)
-
+);
