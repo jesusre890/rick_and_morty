@@ -28,28 +28,27 @@ function Card( props ) { //props es todo lo que hay en cards
    }
 
    return (
-      <div className={styles.container}>
-         <div className={ styles.buttonContainer }>
-            {
-               isFav ? (
-                  <button onClick={handleFavorite}>❤️</button>
-               ) : (
-                  <button onClick={handleFavorite}>🤍</button>
-               )
-            }
-            <button onClick={() => props.onClose(props.id)}>x</button>
+     <div className={styles.container}>
+       <div className={styles.buttonContainer}>
+         {isFav ? (
+           <button onClick={handleFavorite}>❤️</button>
+         ) : (
+           <button onClick={handleFavorite}>🤍</button>
+         )}
+         <button onClick={() => props.onClose(props.id)}>x</button>
+       </div>
+       <Link to={`/detail/${props.id}`}>
+         <div className={styles.dataContainer}>
+           <h2>{props.id}</h2>
+           <h2>{props.name}</h2>
+           <h4>{props.status}</h4>
+           <h4>{props.specie}</h4>
+           <h4>{props.gender}</h4>
+           <h4>{props.origin}</h4>
          </div>
-         <Link to={`/detail/${props.id}`}>
-            <div className={styles.dataContainer}>
-               <h2>{props.name}</h2>
-               <h4>{props.status}</h4>
-               <h4>{props.specie}</h4>
-               <h4>{props.gender}</h4>
-               <h4>{props.origin}</h4>
-            </div>
-            <img src={props.image} alt='Image'/>
-         </Link>
-      </div>
+         <img src={props.image} alt="Image" />
+       </Link>
+     </div>
    );
 };
 

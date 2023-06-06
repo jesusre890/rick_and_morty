@@ -3,6 +3,7 @@ import { FILTER, ORDER } from "./types";
 const initialState = {
   myFavorites: [], // que renderizo
   allCharacters: [], // todos mis favoritos
+  errors: false
 };
 // [{id: 1}, {id: 2}, ...]
 
@@ -12,25 +13,15 @@ export default function reducer(
 ) {
   switch (type) {
     case "ADD_FAV":
-      return { ...state, myFavorites: payload, allCharacters: payload };
-    //case ADD_FAV:
-    //    return {
-    //        ...state,
-    //        myFavorites: [...state.allCharacters, payload],
-    //        allCharacters: [...state.allCharacters, payload]
-    //    }
+      return { ...state, myFavorites: payload, allCharacters: payload, errors: false };
+
     case "REMOVE_FAV":
-      return { ...state, myFavorites: payload };
-    //  case REMOVE_FAV:
-    //    const filteredFavs = state.allCharacters.filter(
-    //      (fav) => fav.id !== Number(payload)
-    //    );
-    //    return {
-    //      ...state,
-    //      myFavorites: filteredFavs,
-    //      allCharacters: filteredFavs,
-    //    };
-    case FILTER:
+      return {...state,myFavorites: payload, errors: false};
+    case "ERROR":
+      return {
+        ...state, errors: payload
+      }
+    case "FILTER":
       //EXTRA: => Caso 'ALL'
       if (payload === "All")
         return {
@@ -45,7 +36,7 @@ export default function reducer(
         ...state,
         myFavorites: filteredCharacters,
       };
-    case ORDER:
+    case "ORDER":
       let orderedCharacters = [...state.allCharacters];
       if (payload === "As") {
         orderedCharacters = state.allCharacters.sort((a, b) => a.id - b.id);
